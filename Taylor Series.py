@@ -8,10 +8,20 @@ plt.style.use("ggplot")
 # Define the variable and the function to approximate and point to approximate around.
 x = sy.Symbol('x')
 p0 = float(input("What point would you like to approximate your function around?: "))
+
+"Analytic functions"
 #f = np.e**(x)
+#f = np.log(x)
+
+"The Trigonometric functions"
 #f = sin(x)
 #f = cos(x)
 f = tan(x)
+
+"The Hyperbolic functions"
+#f = sinh(x)
+#f = cosh(x)
+#f = tanh(x)
 
 # Factorial function
 def factorial(n):
@@ -43,11 +53,21 @@ def plot():
             y1.append(func.subs(x,k))
         plt.plot(x1,y1,label='order '+str(j))
         y1 = []
-    # Plot the function to approximate 
-    #plt.plot(x1,np.e**(x1),label='e of x')
+    # Plot the functions to approximate 
+    
+    #"Analytic functions"
+    #plt.plot(x1,np.e**(x1),label='e to the x')
+    #plt.plot(x1,np.log(x1),label='ln(x)')
+    
+    #"The Trigonometric functions"
     #plt.plot(x1,np.sin(x1),label='sin of x')
     #plt.plot(x1,np.cos(x1),label='cos of x')
     plt.plot(x1,np.tan(x1),label='tan of x')
+    
+    #"The Hyperbolic functions"
+    #plt.plot(x1,np.sinh(x1),label='sinh of x')
+    #plt.plot(x1,np.cosh(x1),label='cosh of x')
+    #plt.plot(x1,np.tanh(x1),label='tanh of x'
     
     plt.xlim(x_lims)
     plt.ylim([-5,5])
