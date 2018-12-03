@@ -5,8 +5,9 @@ import matplotlib.pyplot as plt
 
 plt.style.use("ggplot")
 
-# Define the variable and the function to approximate
+# Define the variable and the function to approximate and point to approximate around.
 x = sy.Symbol('x')
+p0 = float(input("What point would you like to approximate your function around?: "))
 #f = np.e**(x)
 #f = sin(x)
 #f = cos(x)
@@ -31,12 +32,12 @@ def taylor(function,x0,n):
 
 # Plot results
 def plot():
-    x_lims = [-5,5]
+    x_lims = [p0-7,p0+7]
     x1 = np.linspace(x_lims[0],x_lims[1],800)
     y1 = []
     # Approximate up until 10 starting from 1 and using steps of 2
     for j in range(1,10,2):
-        func = taylor(f,0,j)
+        func = taylor(f,p0,j)
         print('Taylor expansion at n='+str(j),func)
         for k in x1:
             y1.append(func.subs(x,k))
