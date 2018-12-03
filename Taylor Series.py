@@ -8,6 +8,8 @@ plt.style.use("ggplot")
 # Define the variable and the function to approximate
 x = sy.Symbol('x')
 #f = np.e**(x)
+#f = sin(x)
+#f = cos(x)
 f = tan(x)
 
 # Factorial function
@@ -27,7 +29,6 @@ def taylor(function,x0,n):
     return p
 
 
-
 # Plot results
 def plot():
     x_lims = [-5,5]
@@ -41,9 +42,12 @@ def plot():
             y1.append(func.subs(x,k))
         plt.plot(x1,y1,label='order '+str(j))
         y1 = []
-    # Plot the function to approximate (sine, in this case)
+    # Plot the function to approximate 
     #plt.plot(x1,np.e**(x1),label='e of x')
+    #plt.plot(x1,np.sin(x1),label='sin of x')
+    #plt.plot(x1,np.cos(x1),label='cos of x')
     plt.plot(x1,np.tan(x1),label='tan of x')
+    
     plt.xlim(x_lims)
     plt.ylim([-5,5])
     plt.xlabel('x')
